@@ -1,0 +1,41 @@
+<br>
+<div class="bg-danger container ">
+ 
+
+
+
+  
+  <div class="row">
+    <div class="col-md-4">   <h1><%= edit %></h1>
+    <p>Welcome to <%= edit %></p>
+    
+     <ul style="list-style-type: none">
+    <li><a class="btn btn-success"  href="/sview">View Subscriber</a></li><br>
+    <li><a class="btn btn-success"  href="/">Home</a></li>
+    </ul>
+    <br></div>
+    <br>
+    <div class="col-md-4 bg-primary" style="border-radius: 10px">
+
+  <form action="/supdate/<%= subs.subid %>" method="POST">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" value="<%= subs.name %>" placeholder="Enter Your Name" name="name">
+    </div>
+  
+     <div class="form-group">
+      <label for="web">web:</label>
+      <input type="text" class="form-control" value="<%= subs.web %>" placeholder="Enter web" name="web">
+    </div>
+
+  
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+</div>
+
+    </div>   <br>
+  </div>
+    </div>
+
+

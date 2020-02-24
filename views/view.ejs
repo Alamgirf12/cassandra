@@ -1,0 +1,46 @@
+
+
+    <h1><%= view %></h1>
+    <p>Welcome to <%= view %></p>
+ 
+ <div class="container">
+  <br>
+<div class="row">
+  <div class="col-md-2">   <ul>
+    <li><a class="btn btn-success" href="/add">Add New</a></li><br>
+       <li><a class="btn btn-success"  href="/sview">View Subscriber</a></li><br>
+    <li><a class="btn btn-success"   href="/">Home</a></li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+<table class="table table-striped table-bordered text-center ">
+  <tr class="bg-success text-white" style="font-weight:800; font-size:16px;">
+ <td>SL</td>
+<td>Name</td>
+<td>Age</td>
+<td>Office</td>
+<td>Country</td>
+<!-- <td>Created At</td> -->
+<td>Action</td>
+
+  </tr>
+  <tr>
+
+  <% 
+var i =1;
+  people.forEach(function(people){ 
+
+  %>        <td><%= i++ %></td>
+            <td><%= people.name %></td>
+          
+             <td><%= people.age %></td>
+               <td><%= people.office %></td>
+                 <td><%= people.Country %></td>
+                 <!--  <td><%= people.created %></td> -->
+            <td>
+            <a class="btn btn-success" href="/edit/<%= people.sid %>" role="button">Edit</a>
+          <a class="btn btn-danger" href="/delete/<%= people.sid %>" role="button">Delete</a></td>
+  </tr>    
+  <% })  %> 
+</table>  
+</div>

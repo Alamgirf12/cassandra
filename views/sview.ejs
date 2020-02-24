@@ -1,0 +1,48 @@
+
+
+    <h1><%= view %></h1>
+    <p>Welcome to <%= view %></p>
+ 
+ <div class="container">
+  <br>
+<div class="row">
+  <div class="col-md-2">   <ul>
+    <li><a class="btn btn-success" href="/addsub">Add New Subscriber</a></li><br>
+    <li><a class="btn btn-success"   href="/">Home</a></li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+<table class="table table-striped table-bordered text-center ">
+  <tr class="bg-success text-white" style="font-weight:800; font-size:16px;">
+ <td>SL</td>
+<td>Name</td>
+<td>Web</td>
+<td>Time</td>
+
+<!-- <td>Created At</td> -->
+<td>Action</td>
+
+  </tr>
+ 
+
+  <% 
+var i =1;
+  subs.forEach(function(subs){ 
+
+  %>        
+   <tr>
+    <td><%= i %></td>
+            <td><%= subs.name %></td>
+          
+             <td><%= subs.web %></td>
+
+             <td><%= moment(subs.created).format("YYYY-MM-DD HH:mm:ss"); %></td>
+              
+            <td>
+            <a class="btn btn-success" href="/sedit/<%= subs.subid %>" role="button">Edit</a>
+          <a class="btn btn-danger" href="/sdelete/<%= subs.subid %>" role="button">Delete</a>
+        </td>
+  </tr>    
+  <% i++;}); %> 
+</table>  
+</div>
